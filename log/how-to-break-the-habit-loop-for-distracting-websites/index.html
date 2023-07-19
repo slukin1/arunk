@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>How to Break the Habit Loop for Distracting Websites | Arun Prasad</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/static/gen/style.css?c8c7d04d">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer data-domain="arunkprasad.com" src="https://plausible.io/js/plausible.js"></script>
+    <meta name="description" content="The simple changes you can make to reclaim your attention">
+  </head>
+  <body><div class="wrapper">
+<nav>
+    <a href="/about/">About</a> |
+    <a href="/">Log</a> |
+    <a href="/pages/">Pages</a> |
+    <a href="/pages/subscribe/">Subscribe</a> |
+    <a href="/atom.xml">Feed</a>
+</nav>
+
+<article>
+<header>
+    <h1 class="mb0">How to Break the Habit Loop for Distracting Websites</h1>
+    <p class="gray f7 normal db mt0">2022-01-11</p>
+</header>
+<p>The basic structure of a habit is <em>cue &rarr; craving &rarr; response &rarr;
+reward</em>:</p>
+<ol>
+<li>
+<p>The <dfn>cue</dfn> is the context that triggers the habit, such as feeling
+   bored or anxious.</p>
+</li>
+<li>
+<p>The <dfn>craving</dfn> is the feeling that you should take some action, such
+   as reaching for your phone and opening up YouTube.</p>
+</li>
+<li>
+<p>The <dfn>response</dfn> is the action, such as watching a video.</p>
+</li>
+<li>
+<p>The <dfn>reward</dfn> is the result that reinforces the habit, such as the
+   dopamine hit of novel content.</p>
+</li>
+</ol>
+<p>Weaken these four and the habit eventually fades. For example, if your phone
+is harder to reach, it'll be more difficult to act on the habit.</p>
+<p>But since this is ostensibly a tech blog, here are some tech things you can do
+with the same effect:</p>
+<h1>Edit <code>/etc/hosts</code></h1>
+<p>Your <a href="https://tldp.org/LDP/solrhe/Securing-Optimizing-Linux-RH-Edition-v1.3/chap9sec95.html"><code>/etc/hosts</code></a> file defines redirects for different websites.
+Redirecting a website to <code>localhost</code> (IP address <code>127.0.0.1</code>), as is done here,
+has the effect of preventing you from visiting that website:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>127.0.0.1  twitter.com
+127.0.0.1  www.twitter.com
+127.0.0.1  reddit.com
+127.0.0.1  www.reddit.com
+127.0.0.1  youtube.com
+127.0.0.1  www.youtube.com
+127.0.0.1  tumblr.com
+127.0.0.1  www.tumblr.com
+127.0.0.1  twitch.tv
+127.0.0.1  www.twitch.tv
+</code></pre></div></td></tr></table></div>
+
+<p>Yes, <code>www</code> <a href="https://unix.stackexchange.com/questions/439120/why-do-i-need-www-and-non-www-in-etc-hosts">is necessary</a> if the site uses it.</p>
+<p>If these changes don't take effect, run:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># macOS only</span>
+dscacheutil<span class="w"> </span>-flushcache
+</code></pre></div></td></tr></table></div>
+
+<p>to flush the cache.</p>
+<h1>[iOS] Enable <em>Content &amp; Privacy Restrictions</em></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Update</strong> &mdash; This doesn't work. iOS allows block lists only as part of
+their "Limit Adult Websites" feature, which has false positives and can
+block legitimate sites based on keywords.</p>
+</div>
+<p>If you have an iOS device, you can also enable per-website restrictions:</p>
+<ol>
+<li>Go to <em>Content &amp; Privacy Restrictions</em> in <em>Settings</em>.</li>
+<li>Go to <em>Content Restrictions &rarr; Web Content</em>.</li>
+<li>Select <em>Limit Adult Websites</em> (sketchy name, I know).</li>
+<li>Add whatever websites you want to block to the <em>Never Allow</em> list.</li>
+</ol>
+<h1>Does this work?</h1>
+<p>These changes are just speed bumps I use to remind myself that I probably
+<em>don't</em> want to be using this website. If I have a real need, I can easily
+circumvent these changes and use them when I need to.</p>
+<p>If your problem is more serious, I've heard good things about
+<a href="https://freedom.to/">Freedom</a>, but I think someone could circumvent basically
+<em>any</em> content blocker if they were determined enough.</p>
+<div class="admonition endnotes">
+<p class="admonition-title">Endnotes</p>
+<p>This post was written in ... 18 minutes?! Wow, I need to learn to be faster.</p>
+</div>
+</article>
+</div>
+
+<nav class="df prev-next">
+    
+    
+    <a href="/log/why-i-blog/">Why I Blog &rarr;</a>
+    
+</nav></body>
+</html>

@@ -1,0 +1,1211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>arunkprasad.com feed</title>
+  <link href="https://arunkprasad.com" rel="alternate" />
+  <link href="https://arunkprasad.com/atom.xml" rel="self" />
+  <id>https://arunkprasad.com/</id>
+  <updated>2022-01-11T00:00:00-07:53</updated>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-11:/log/how-to-break-the-habit-loop-for-distracting-websites/</id>
+    <link href="https://arunkprasad.com/log/how-to-break-the-habit-loop-for-distracting-websites/"/>
+    <title>How to Break the Habit Loop for Distracting Websites</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-11T00:00:00-07:53</published>
+    <updated>2022-01-11T00:00:00-07:53</updated>
+    <summary>The simple changes you can make to reclaim your attention</summary>
+    <content type="html">&lt;p&gt;The basic structure of a habit is &lt;em&gt;cue &amp;rarr; craving &amp;rarr; response &amp;rarr;
+reward&lt;/em&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;dfn&gt;cue&lt;/dfn&gt; is the context that triggers the habit, such as feeling
+   bored or anxious.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;dfn&gt;craving&lt;/dfn&gt; is the feeling that you should take some action, such
+   as reaching for your phone and opening up YouTube.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;dfn&gt;response&lt;/dfn&gt; is the action, such as watching a video.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;dfn&gt;reward&lt;/dfn&gt; is the result that reinforces the habit, such as the
+   dopamine hit of novel content.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Weaken these four and the habit eventually fades. For example, if your phone
+is harder to reach, it&#39;ll be more difficult to act on the habit.&lt;/p&gt;
+&lt;p&gt;But since this is ostensibly a tech blog, here are some tech things you can do
+with the same effect:&lt;/p&gt;
+&lt;h1&gt;Edit &lt;code&gt;/etc/hosts&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Your &lt;a href=&#34;https://tldp.org/LDP/solrhe/Securing-Optimizing-Linux-RH-Edition-v1.3/chap9sec95.html&#34;&gt;&lt;code&gt;/etc/hosts&lt;/code&gt;&lt;/a&gt; file defines redirects for different websites.
+Redirecting a website to &lt;code&gt;localhost&lt;/code&gt; (IP address &lt;code&gt;127.0.0.1&lt;/code&gt;), as is done here,
+has the effect of preventing you from visiting that website:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt; 1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 5&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 8&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 9&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;10&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;127.0.0.1  twitter.com
+127.0.0.1  www.twitter.com
+127.0.0.1  reddit.com
+127.0.0.1  www.reddit.com
+127.0.0.1  youtube.com
+127.0.0.1  www.youtube.com
+127.0.0.1  tumblr.com
+127.0.0.1  www.tumblr.com
+127.0.0.1  twitch.tv
+127.0.0.1  www.twitch.tv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;Yes, &lt;code&gt;www&lt;/code&gt; &lt;a href=&#34;https://unix.stackexchange.com/questions/439120/why-do-i-need-www-and-non-www-in-etc-hosts&#34;&gt;is necessary&lt;/a&gt; if the site uses it.&lt;/p&gt;
+&lt;p&gt;If these changes don&#39;t take effect, run:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;c1&#34;&gt;# macOS only&lt;/span&gt;
+dscacheutil&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-flushcache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;to flush the cache.&lt;/p&gt;
+&lt;h1&gt;[iOS] Enable &lt;em&gt;Content &amp;amp; Privacy Restrictions&lt;/em&gt;&lt;/h1&gt;
+&lt;div class=&#34;admonition warning&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Warning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; &amp;mdash; This doesn&#39;t work. iOS allows block lists only as part of
+their &#34;Limit Adult Websites&#34; feature, which has false positives and can
+block legitimate sites based on keywords.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;If you have an iOS device, you can also enable per-website restrictions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;em&gt;Content &amp;amp; Privacy Restrictions&lt;/em&gt; in &lt;em&gt;Settings&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Go to &lt;em&gt;Content Restrictions &amp;rarr; Web Content&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Select &lt;em&gt;Limit Adult Websites&lt;/em&gt; (sketchy name, I know).&lt;/li&gt;
+&lt;li&gt;Add whatever websites you want to block to the &lt;em&gt;Never Allow&lt;/em&gt; list.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;Does this work?&lt;/h1&gt;
+&lt;p&gt;These changes are just speed bumps I use to remind myself that I probably
+&lt;em&gt;don&#39;t&lt;/em&gt; want to be using this website. If I have a real need, I can easily
+circumvent these changes and use them when I need to.&lt;/p&gt;
+&lt;p&gt;If your problem is more serious, I&#39;ve heard good things about
+&lt;a href=&#34;https://freedom.to/&#34;&gt;Freedom&lt;/a&gt;, but I think someone could circumvent basically
+&lt;em&gt;any&lt;/em&gt; content blocker if they were determined enough.&lt;/p&gt;
+&lt;div class=&#34;admonition endnotes&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Endnotes&lt;/p&gt;
+&lt;p&gt;This post was written in ... 18 minutes?! Wow, I need to learn to be faster.&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-11:/log/why-i-blog/</id>
+    <link href="https://arunkprasad.com/log/why-i-blog/"/>
+    <title>Why I Blog</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-11T00:00:00-07:53</published>
+    <updated>2022-01-11T00:00:00-07:53</updated>
+    <summary>Why I think blogging is undervalued</summary>
+    <content type="html">&lt;p&gt;I think blogging is massively undervalued.&lt;/p&gt;
+&lt;h1&gt;What I get out of blogging&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;I can write whatever I want.&lt;/em&gt; Few spaces on the Internet are just for you
+anymore, especially if you don&#39;t own the platform. There&#39;s something
+delightfully freeing about having my own space and being able to write about
+whatever I want.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;It improves my writing.&lt;/em&gt; Consistent deliberate practice on a schedule will
+do that. The public nature of blogging helps, since I&#39;m forced to think through
+each word and ask whether it&#39;s clear enough for the general reader.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;It improves my thinking.&lt;/em&gt; Writing is a thinking tool. It forces murky ideas
+into the sun where I can see and reshape them. Clearer writing means clearer
+thinking.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;It flushes out old ideas.&lt;/em&gt; Paul Graham &lt;a href=&#34;http://www.paulgraham.com/writing44.html&#34;&gt;puts it well&lt;/a&gt;: &#34;Writing doesn&#39;t
+just communicate ideas; it generates them.&#34; I&#39;ve stumbled on spaces I wouldn&#39;t
+have seriously considered otherwise.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I get feedback.&lt;/em&gt; I can share what I&#39;m thinking about with friends and give
+them time to think about it. Conversation is too fast for that, and maybe
+someone&#39;s not in the mood to talk about &lt;a href=&#34;/log/a-fast-and-simple-gmail-workflow/&#34;&gt;Gmail workflows&lt;/a&gt; or my topic
+&lt;em&gt;du jour&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Maybe it&#39;ll be wildly successful.&lt;/em&gt; Who knows? I get enough out of it
+anyway. But for many people, blogging has led to job offers, friendships,
+business partners, relationships, and wonderful opportunities. The only way to
+find out what I might get is to try.&lt;/p&gt;
+&lt;h1&gt;Why I stayed away until now&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;I felt I had nothing new to say.&lt;/em&gt; I mainly blog for me, so I don&#39;t worry
+  about it. Also, I now think that the idea of having nothing new to say is
+  self-defeating. Maybe I have nothing to say &lt;em&gt;now&lt;/em&gt;, but who knows what the
+  future will bring? And when I &lt;em&gt;do&lt;/em&gt; have something to say, I want to be ready.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;I don&#39;t like being so public-facing.&lt;/em&gt; I still don&#39;t. But if that&#39;s the
+  price of influence and feedback, so be it. I don&#39;t like the idea of being
+  data-mined, but if I speak up for my values, maybe I can help change the
+  conversation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;I felt I had to be perfect.&lt;/em&gt; I still have that lingering feeling, but if
+  what I care about is outstanding work, iterating repeatedly is the better way
+  to go.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;I didn&#39;t set enough time aside to start.&lt;/em&gt; It was only when I timed myself
+  writing that I realized how long it takes me to write something.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&#34;Blogging&#34; sounds so goofy.&lt;/em&gt; Yes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;The social benefits (yes, really)&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Anyone can read it.&lt;/em&gt; Why write an email that a handful of friends would
+  read when I can create something public that anyone could share and enjoy?
+  Even if I&#39;m talking about something basic, maybe I&#39;ll write about it in just
+  the right way that it clicks with somebody else.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;I encourage others to post too.&lt;/em&gt; Habits are social, and I like the idea
+  of a world where we all sharpen our thinking, own our own spaces, and share
+  our ideas with each other.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Credit where credit is due&lt;/h1&gt;
+&lt;p&gt;Here are successful people who first put the seed of writing/blogging into my
+head:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Jeff Atwood (&lt;a href=&#34;https://blog.codinghorror.com/how-to-achieve-ultimate-blog-success-in-one-easy-step/&#34;&gt;&#34;How To Achieve Ultimate Blog Success In One Easy Step&#34;&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Paul Graham (&lt;a href=&#34;http://www.paulgraham.com/writing44.html&#34;&gt;&#34;Writing, Briefly&#34;&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Aaron Swartz (&lt;a href=&#34;http://www.aaronsw.com/weblog/about&#34;&gt;&#34;What is going on here?&#34;&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Steve Yegge (&lt;a href=&#34;https://sites.google.com/site/steveyegge2/you-should-write-blogs&#34;&gt;&#34;You Should Write Blogs&#34;&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Process and writing principles&lt;/h1&gt;
+&lt;p&gt;Here are the process principles I try to follow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Write every day.&lt;/em&gt; The discipline of it is part of having a &lt;a href=&#34;/log/amateurs-and-professionals/&#34;&gt;professional
+  mindset&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Publish.&lt;/em&gt; If I think a post didn&#39;t turn out well, too bad &amp;mdash; it&#39;s going
+  out. Not every result will be great, but I&#39;m sure I&#39;ll hit on some gems with
+  enough practice.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here are the writing principles I try to follow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;The reader is busy and wants information.&lt;/em&gt; Get to the point. Make it
+  scannable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Write for someone specific.&lt;/em&gt; If it&#39;s an idea I find pretty, I write for me.
+  Otherwise, I visualize talking to one of my friends, which helps me clarify
+  the style and presentation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Set a timer.&lt;/em&gt; I&#39;ve noticed I tend to take a while when writing a post. So
+  from now on I&#39;ll try writing to a timer. This post took 46 minutes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-11:/log/what-are-fundamentals/</id>
+    <link href="https://arunkprasad.com/log/what-are-fundamentals/"/>
+    <title>What are Fundamentals?</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-11T00:00:00-07:53</published>
+    <updated>2022-01-11T00:00:00-07:53</updated>
+    <summary>In which I figure out what I mean by &#34;fundamentals&#34;</summary>
+    <content type="html">&lt;p&gt;I&#39;m still thinking about the amateur/professional distinction I &lt;a href=&#34;/log/amateurs-and-professionals/&#34;&gt;wrote about
+recently&lt;/a&gt;, not least because I blundered into it.&lt;/p&gt;
+&lt;p&gt;Before that post, I had been planning to write about a minor productivity hack.
+But the more I followed that line, the more I felt uneasy. Then suddenly, an
+idea I had heard about all my life finally clicked into place, and I felt my
+perspective completely change.&lt;/p&gt;
+&lt;p&gt;As a reminder, &#34;amateur&#34; and &#34;professional&#34; are &lt;em&gt;attitudes&lt;/em&gt;. And the
+professional attitude is to master and treasure the fundamentals.&lt;/p&gt;
+&lt;p&gt;The writing on fundamentals that I&#39;m familiar with is vigorous and inspiring.
+But I also often find that it&#39;s either so abstract that I don&#39;t know what to
+actually &lt;em&gt;do&lt;/em&gt; or so localized that I can&#39;t use it for my work.&lt;/p&gt;
+&lt;p&gt;In this post, I&#39;m doing some ground clearing for myself so that I better
+understand what fundamentals are.&lt;/p&gt;
+&lt;h1&gt;Fundamentals in the games of life&lt;/h1&gt;
+&lt;p&gt;&lt;dfn&gt;Game theory&lt;/dfn&gt; is a formal way of studying how people act and how they
+interact with each other. The word &#34;game&#34; sounds playful, but it is meant
+seriously. In fact, one of the early applications of game theory was in
+deciding nuclear strategy.&lt;/p&gt;
+&lt;p&gt;If I&#39;m writing a function, that&#39;s the &lt;dfn&gt;game&lt;/dfn&gt; I find myself in. I call
+this situation a game because it has these three aspects:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;dfn&gt;Rules&lt;/dfn&gt;: the programming language I use, the time I have available,
+   the existing codebase, and my build system all constrain and define the
+   game.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;dfn&gt;Outcomes&lt;/dfn&gt;: my code&#39;s correctness, quality, performance, and
+   reusability might all vary, and some outcomes are better than others.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;dfn&gt;Actions&lt;/dfn&gt;: I must act to get the best outcome I know how to.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Sometimes I find it useful to think about life as a &lt;em&gt;set&lt;/em&gt; of games. The insight
+here is that we are always playing &lt;em&gt;multiple&lt;/em&gt; games at very different scales:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Time&lt;/strong&gt;: Games repeat. A game can be &lt;em&gt;short-term&lt;/em&gt; (a hackathon project,
+  shipping an urgent feature) or &lt;em&gt;long-term&lt;/em&gt; (making a flagship product,
+  paying down technical debt).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Space&lt;/strong&gt;: Others are playing games too. A game can be &lt;em&gt;individual&lt;/em&gt; (solo
+  projects, low-level &lt;a href=&#34;https://www.indeed.com/career-advice/finding-a-job/what-is-an-individual-contributor&#34;&gt;IC&lt;/a&gt; work) or &lt;em&gt;social&lt;/em&gt; (collaborative projects,
+  high-level IC work).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;: Games are deeply nested. A given game might include &lt;em&gt;lower&lt;/em&gt; games
+  (typing quickly, naming a variable, reading API documentation) and be
+  included within &lt;em&gt;higher&lt;/em&gt; games (creating a great product, keeping my team
+  happy, having pride in my craft).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;dfn&gt;Fundamentals&lt;/dfn&gt; are principles that apply to games across time, space,
+and scope. They are important because they affect the entire set of games we
+play.&lt;/p&gt;
+&lt;h1&gt;Finding fundamentals&lt;/h1&gt;
+&lt;p&gt;At the broadest level, every game you play is constrained by reality, human
+nature, and your own self-nature. So all you need to do is find the deep
+principles that characterize all of reality and humankind.&lt;/p&gt;
+&lt;p&gt;Easy, right?&lt;/p&gt;
+&lt;p&gt;I can think of a few heuristics here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;em&gt;top-down&lt;/em&gt; approach is to start with a formal theory (like game theory)
+  and find rules that seem to apply to simple games. Then we can see how well
+  those rules apply in practice.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;em&gt;bottom-up&lt;/em&gt; approach is to try what seems like it should work and see if
+  it helps or not. If you do this for long enough &amp;mdash; across different domains,
+  eras, and cultures &amp;mdash; then what survives is probably what&#39;s fundamental.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One ancient idea is to &lt;strong&gt;live in reality&lt;/strong&gt;, which I think is the most important
+fundamental of all:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Great startups make something people want, not what they &lt;em&gt;think&lt;/em&gt; people
+  want.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Great scientists rigorously test their ideas and keep only the ones that
+  survive.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Great relationships are about being authentic and dealing with who the other
+  person is, not who we &lt;em&gt;assume&lt;/em&gt; they are.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Great people face their shortcomings honestly and address them. To paraphrase
+  Fred Rogers, what is mentionable is manageable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Why fundamentals are simple&lt;/h1&gt;
+&lt;p&gt;As principles become more fundamental, they inevitably lose detail and become 
+simpler and more essential. Three scenarios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Your high-end restaurant is losing money. You have great chefs and excellent
+  equipment, but your ingredients are terrible.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Your spam detector does well on your training data but struggles in
+  production. You investigate and find that many of your training examples are
+  mislabeled.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Your team has done another deathmarch to make a deadline. All of your
+  colleagues are getting burned out, and one of them privately tells you that
+  he&#39;s leaving the company.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Garbage in, garbage out.&lt;/p&gt;
+&lt;h1&gt;Why fundamentals are neglected&lt;/h1&gt;
+&lt;p&gt;Simple principles cut across multiple domains, so we&#39;ve heard them our whole
+lives. The most important ones instinctively sound like clichés, and their
+meaning is so obvious that even young children can understand them. You don&#39;t
+need any cleverness or intelligence to know what these fundamentals mean.&lt;/p&gt;
+&lt;p&gt;And it&#39;s precisely this quality that makes them feel childish, basic,
+and embarrassing. How would you feel if you were rushing to finish a project
+and someone told you &#34;haste makes waste&#34;? Even knowing better, I feel
+stunned to think about someone saying that to me at work.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;On one level, we all know this stuff already [...] The trick is keeping the
+truth up-front in daily consciousness.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; David Foster Wallace, &#34;This is Water&#34;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The instinctual resistance is that there is surely a more clever and
+interesting solution. And sometimes there is, especially in rapidly growing
+fields. But I still think we should search for them only after mastering the
+fundamentals.&lt;/p&gt;
+&lt;h1&gt;Why fundamentals are difficult&lt;/h1&gt;
+&lt;p&gt;Fundamentals are abstract generalizations across many different domains. The
+more applicable they are, the more abstract they become.&lt;/p&gt;
+&lt;p&gt;But go deeply enough into any domain and you&#39;ll find that it&#39;s &lt;em&gt;enormously&lt;/em&gt;
+complex. &lt;a href=&#34;http://johnsalvatier.org/blog/2017/reality-has-a-surprising-amount-of-detail&#34;&gt;John Salvatier&lt;/a&gt; writes memorably about the unexpected level of
+detail he found when building staircases with his father:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It’s tempting to think ‘So what?’ and dismiss these details as incidental or
+specific to stair carpentry. And they &lt;em&gt;are&lt;/em&gt; specific to stair carpentry;
+that’s what makes them details. But the existence of a surprising number of
+meaningful details is not specific to stairs. Surprising detail is a near
+universal property of getting up close and personal with reality.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There&#39;s a clear tension here. The fundamental seems too abstract to work with
+the details of the situation. Or in the worst case, the fundamental makes sense
+from the perspective of a higher-level game that we don&#39;t understand &lt;em&gt;or
+even know about&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Again, the approaches that come to my mind are top-down and bottom up.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;top-down&lt;/em&gt; approach exhaustively applies a fundamental we trust. How do you
+&lt;em&gt;live in reality&lt;/em&gt; with software engineering? Maybe this means:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;knowing your values, interests, and aptitudes&lt;/li&gt;
+&lt;li&gt;measuring ceaselessly: timelines, metrics, performance, hotspots&lt;/li&gt;
+&lt;li&gt;checking that your work solves a real need&lt;/li&gt;
+&lt;li&gt;vetting your logic with unit and integration tests&lt;/li&gt;
+&lt;li&gt;documenting your project to clarify our APIs and design goals&lt;/li&gt;
+&lt;li&gt;mastering your project&#39;s languages and infrastructure&lt;/li&gt;
+&lt;li&gt;understanding your project&#39;s costs and projected costs&lt;/li&gt;
+&lt;li&gt;comparing your system to others and debating the trade-offs&lt;/li&gt;
+&lt;li&gt;researching similar projects to learn about new breakthroughs&lt;/li&gt;
+&lt;li&gt;scouting your company&#39;s competition&lt;/li&gt;
+&lt;li&gt;asking your CEO to explain your company&#39;s business needs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;em&gt;bottom-up&lt;/em&gt; approach tests a principle we&#39;re not sure about. How would a
+skeptical person &lt;em&gt;live in reality&lt;/em&gt; with software engineering? Maybe this means:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ignore the principle and seeing how well that works.&lt;/li&gt;
+&lt;li&gt;Get experience by solving many different kinds of problems.&lt;/li&gt;
+&lt;li&gt;Introspect on what worked and what didn&#39;t.&lt;/li&gt;
+&lt;li&gt;Realize that the principle would have prevented a lot of headaches.&lt;/li&gt;
+&lt;li&gt;Apply the principle to new work with great success.&lt;/li&gt;
+&lt;li&gt;Declare that the principle is fundamental.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Either of these bring along multiple corollary values and skills: diligence,
+courage, effort, persistence, organization, learning, practice, memorization,
+communication, focus, social skills, creativity, measurement, objectivity,
+patience, efficiency, speed, ...&lt;/p&gt;
+&lt;p&gt;But perhaps that should be its own post.&lt;/p&gt;
+&lt;h1&gt;Coda: Riffing on the games of life&lt;/h1&gt;
+&lt;p&gt;As a parting thought, what I like about the &#34;game&#34; framing is that it neatly
+includes a lot of big concepts. To riff on it a bit:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Getting a good outcome is the &lt;dfn&gt;meaning&lt;/dfn&gt; of a game.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choosing long-term games is &lt;dfn&gt;wisdom&lt;/dfn&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Low-level games are &lt;dfn&gt;tactics&lt;/dfn&gt;. High-level games are
+&lt;dfn&gt;strategy&lt;/dfn&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Social games are &lt;dfn&gt;culture&lt;/dfn&gt;. Long-term culture is
+  &lt;dfn&gt;tradition&lt;/dfn&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Games we choose subconsciously are &lt;dfn&gt;habits&lt;/dfn&gt;. Subconscious cultural
+  games are &lt;dfn&gt;deep culture&lt;/dfn&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The games a person plays with their own mental state are called &lt;dfn&gt;inner
+  games&lt;/dfn&gt;. High-level inner games are &lt;dfn&gt;spirituality&lt;/dfn&gt;. In theory,
+  the culture that supports spirituality is &lt;dfn&gt;religion&lt;/dfn&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The rules of the game are &lt;dfn&gt;reality&lt;/dfn&gt;. The rules of the players are
+  &lt;dfn&gt;human nature&lt;/dfn&gt;. Our preferences among games and outcomes are our
+  &lt;dfn&gt;values&lt;/dfn&gt;. The actions available to us are our &lt;dfn&gt;ability&lt;/dfn&gt;.
+  Knowing which actions to use and which games to play is &lt;dfn&gt;judgment&lt;/dfn&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Values among low-level games are &lt;dfn&gt;likes and dislikes&lt;/dfn&gt;. Values among
+  mid-level games are &lt;dfn&gt;ethics&lt;/dfn&gt;. Values among high-level games are
+  &lt;dfn&gt;morals&lt;/dfn&gt;. The sum total of our values is our &lt;dfn&gt;personality&lt;/dfn&gt;.
+  To reveal our highest games and values is &lt;dfn&gt;authenticity&lt;/dfn&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Discovering a new rule is &lt;dfn&gt;insight&lt;/dfn&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-10:/log/exponential-self-improvement/</id>
+    <link href="https://arunkprasad.com/log/exponential-self-improvement/"/>
+    <title>Exponential Self-Improvement?</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-10T00:00:00-07:53</published>
+    <updated>2022-01-10T00:00:00-07:53</updated>
+    <summary>How good can someone get, and how quickly?</summary>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;The greatest shortcoming of the human race is our inability to understand the
+exponential function.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Albert A. Bartlett&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GDP, Moore&#39;s law, greenhouse gas emissions &amp;mdash; Exponential goods are the some of
+our greatest blessings and dangers.&lt;/p&gt;
+&lt;p&gt;But what exponentials can a person create in their own life? &lt;a href=&#34;https://www.google.com/search?q=exponential+self+growth&#34;&gt;Ask the
+internet&lt;/a&gt; and you&#39;ll learn that you&#39;re just one listicle away from
+bench pressing Mount Everest and eating grapes from the hands of your three
+million wives.&lt;/p&gt;
+&lt;p&gt;This is unfortunate. The giddiness of the messenger, and perhaps the confusion
+of &#34;exponential&#34; with &#34;fast,&#34; confuses the ordinary but profound reality.&lt;/p&gt;
+&lt;p&gt;As far as I can see, there are exponentials both positive (growing unboundedly)
+and negative (decaying to zero) at the personal level.&lt;/p&gt;
+&lt;p&gt;For positives, only two come to mind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Wealth&lt;/strong&gt; &amp;mdash; money, stocks, equity growth.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Influence&lt;/strong&gt; &amp;mdash; subscribers and views when directed outward; recommendations
+  and opportunities when directed inward.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both are straightforward but influence is more clearly zero-sum: the more my
+audience engages with me, the less they engage with something else. But given
+the state of attention in the modern world, I think this is an improvement.&lt;/p&gt;
+&lt;p&gt;There is also a third I&#39;m less sure about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Idea exploration&lt;/strong&gt; &amp;mdash; finding good ideas (and ignoring bad ones), either
+  through honing your intuition or by being able to try ideas out exponentially
+  (e.g. through your network).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I put this in the exponential bucket because the wrong idea (even with good
+execution) is worth nothing, but the right one is worth billions.&lt;/p&gt;
+&lt;p&gt;I&#39;m reminded again of the insight about Jeff Dean and Sanjay Ghemawat I quoted
+in my &lt;a href=&#34;/log/amateurs-and-professionals/&#34;&gt;amateurs and professionals&lt;/a&gt; post. It&#39;s not that they type
+thousands of times faster; it&#39;s that their intuition leads them to the one good
+idea over the thousand bad ones.&lt;/p&gt;
+&lt;p&gt;And once again, this idea to be an important fundamental that cuts across
+domains. To quote the Go player Toshiro Kageyama 7-dan, whom I&#39;ve &lt;a href=&#34;/log/kageyama-7-dan-on-amateurs-and-professionals&#34;&gt;mentioned
+before&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One must, without fail, learn the correct way to study.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Toshiro Kageyama 7-dan, &lt;em&gt;Lessons in the Fundamentals of Go&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For negative exponentials, only one comes to mind: &lt;a href=&#34;https://en.wikipedia.org/wiki/Spaced_repetition&#34;&gt;spaced
+repetition&lt;/a&gt; to memorize facts
+with exponentially less time. With spaced repetition our memory is bounded only
+by how fast we can add facts to the system. Note that while this is a
+breakthrough, our ability to memorize ultimately remains linear.&lt;/p&gt;
+&lt;p&gt;For all else, I think growth is mostly linear or sub-linear, with rare
+multiplicitave phases. But steady growth of any kind makes us incomparable to
+who we once were. It may not be exponential, but it&#39;s wonder enough.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-09:/log/kageyama-7-dan-on-amateurs-and-professionals/</id>
+    <link href="https://arunkprasad.com/log/kageyama-7-dan-on-amateurs-and-professionals/"/>
+    <title>Kageyama 7-Dan on Amateurs and Professionals</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-09T00:00:00-07:53</published>
+    <updated>2022-01-09T00:00:00-07:53</updated>
+    <summary>Because I love him so, so much</summary>
+    <content type="html">&lt;p&gt;In &lt;a href=&#34;/log/amateurs-and-professionals/&#34;&gt;yesterday&#39;s post&lt;/a&gt; I quoted Toshiro Kageyama 7-dan, author of the
+fantastic &lt;em&gt;Lessons in the Fundamentals of Go&lt;/em&gt;. If I were more self-indulgent, I
+would have quoted nearly half the book.&lt;/p&gt;
+&lt;p&gt;But I just realized something: I have a &lt;em&gt;blog&lt;/em&gt;, and I can do whatever I &lt;em&gt;want&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;In the quotes below, all emphasis is mine.&lt;/p&gt;
+&lt;h1&gt;On amateurs and professionals&lt;/h1&gt;
+&lt;p&gt;On the beauty of the professional&#39;s work:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Watching a professional game, one can sense beauty in the flow of play and
+beauty in the shapes created. Amateur go does not even begin to approach
+this.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The simple difference:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To put it simply, amateurs play at the game; professionals labor at it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Making the leap:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[W]hat changed me from an amateur into a professional was getting a really
+firm grip on the fundamentals.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The universal rule:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Faithfulness to fundamentals seems to be a common thread linking
+professionalism in all areas.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;On trusting the basics:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Go is the kind of game in which you are an expert if you can just keep on
+making ordinary moves. You need not play any especially brilliant moves at
+all. Amateurs&#39; moves, however, are frequently far from ordinary; in fact, I
+see them making the most nonsensical moves imaginable[.]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Like your craft; be willing to learn; and put in the effort to do it right:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;No doubt the first requirement for becoming strong at go is to like it, like
+it more than food or drink, and a second requirement is the desire to learn.
+A third requirement is to study it, using proper methods, patiently, little
+by little, without cramming. Ask dan-level amateurs and you will find that
+they did not become stronger just by playing their opponents for fun. Each one
+kindled the desire to learn more, and put in no small amount of time
+studying.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;On fundamentals&lt;/h1&gt;
+&lt;p&gt;Internalizing the fundamentals:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The most important thing to learn from professionals is not where they play
+but why they play there.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Fundamentals are endless:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When he advances to the point where he begins to think of himself as a strong
+player, the thing he needs to do to become ever stronger is to go back and
+study the fundamentals once more.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;On making them instinctual:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[...] the game lasts for two or three hundred moves, and you cannot stop at
+each one to consider each of the fundamentals. You have to soak up the
+fundamentals as you practice on your own, studying them until they become a
+part of your very being. &lt;em&gt;If the fundamentals do not operate subconciously
+when you sit down to play, you have not mastered them yet.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;On the dangers of amateurism&lt;/h1&gt;
+&lt;p&gt;Collapsing due to shallow, brittle knowledge:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[Those who memorize fixed opening patterns] tend to become too dependent on
+patterns, thereby crippling their innate strength, and fall easy prey to the
+former, who have nothing but innate strength to rely on.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;On the disastrous end of the amateur path. My favorite quote from the book:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The reason that so many people never master this elementary skill is that
+they keep ignoring it as being beneath them.&lt;/em&gt; They are the people who cannot
+be bothered to &#39;read&#39;; who try to capture the uncapturable group because it
+just looks as if it can be done or because they figure they can muddle
+through somehow, and so they rush headlong into disaster. They are also the
+people who, when they face a slightly stronger opponent, do not try to
+capture the capturable group because with their fuzzy reading they are afraid
+of messing it up; who innocently add unnecessary stones to their already
+alive groups; who take fright without cause; who tremble when they sit down
+at the go board; who play through the whole game without a sullen expression;
+who lose every fight; who eventually come to hate go. &lt;em&gt;Sorry wretches,
+through choice they have abandoned the most interesting and enjoyable of all
+games.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;On emotional management&lt;/h1&gt;
+&lt;p&gt;Avoiding despair:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Anyone who leads an abandoned and dissipated life because the end of the wold
+is near is going to experience his own personal destruction first.
+Desperation and despair are to be feared most of all.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;On effort&lt;/h1&gt;
+&lt;p&gt;Effort in everything:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There is a saying that a lion gives its all when chasing even a rabbit.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The pain of effort is worth it &amp;mdash; but only if done right:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Of course one cannot make progress in any discipline without effort. &#39;There
+is no pleasure without pain.&#39; Pleasure is progress, and pain the pain of
+effort.  Study in the wrong way, however, and the result may be just pain
+with no pleasure at all. One must, without fail, learn the correct way to
+study.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The reward:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;No professional regrets the time he has to spend studying. [...] The way
+young players have taken over the game can only be called terrifying. The
+time they spend studying every day defies the imagination.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Talent is not enough:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Professionals do this unquestioningly. Even a gemstone has to be polished.
+&#39;A man is always moving either forward or backward,&#39; says Kano, 9-dan. &#39;He
+never stands still. This should be every go player&#39;s motto, and he should
+&lt;em&gt;keep piling effort on top of effort&lt;/em&gt; no matter what his age. He can be
+confident of always making progress.&#39;&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+  </entry>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-08:/log/amateurs-and-professionals/</id>
+    <link href="https://arunkprasad.com/log/amateurs-and-professionals/"/>
+    <title>Amateurs and Professionals</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-08T00:00:00-07:53</published>
+    <updated>2022-01-08T00:00:00-07:53</updated>
+    <summary>What really matters in becoming world-class</summary>
+    <content type="html">&lt;p&gt;Every so often I get the craving to tweak my workflow: a more comfortable shell
+here, a few Vim shortcuts there, and a sprinkle of aesthetics to tie it all
+together. It&#39;s a fun diversion and makes my daily work a little faster.&lt;/p&gt;
+&lt;p&gt;The instinctual fantasy is that the right tools and the right shortcuts will
+finally rapture me to the world of Rockstardom. But the moment passes when I
+remember that one of the best engineers I know uses &lt;a href=&#34;https://en.wikipedia.org/wiki/Typing#Hunt_and_peck&#34;&gt;two-finger typing&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;The author Steven Pressfield distinguishes between &lt;em&gt;amateurs&lt;/em&gt; and
+&lt;em&gt;professionals&lt;/em&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The sign of the amateur is overglorification of and preoccupation with the
+mystery.&lt;/p&gt;
+&lt;p&gt;The professional shuts up. She doesn’t talk about it. She does her work.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Steven Pressfield, &lt;em&gt;The War of Art&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;These terms are &lt;strong&gt;attitudes&lt;/strong&gt;, not job descriptions. Even a senior Google
+engineer can be an amateur, and even a hobbyist can be a
+professional.&lt;/p&gt;
+&lt;p&gt;The amateur attitude is flash over substance. It&#39;s &lt;em&gt;being&lt;/em&gt; a writer over
+&lt;em&gt;doing&lt;/em&gt; the writing; hacks over principles; the fantasy of big results over the
+reality of daily process.&lt;/p&gt;
+&lt;p&gt;The professional attitude is the opposite: process, consistency, discipline,
+effort, and fundamentals. It&#39;s focusing your energy on what really matters.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Three examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Dan Luu has one of the &lt;a href=&#34;http://danluu.com&#34;&gt;plainest blogs&lt;/a&gt; I&#39;ve ever seen,
+enough so that Hacker News inevitably kvetches about it. (&lt;em&gt;&#34;I would have tried
+to read this but the 1994 styling of the page made it impossible,&#34;&lt;/em&gt;
+&lt;a href=&#34;https://news.ycombinator.com/item?id=29551067&#34;&gt;e.g.&lt;/a&gt;). But his posts are so thorough and insightful that they become
+popular anyway. When substance is solid, substance wins.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I saw a nice comment online that I wish I could find again. The gist: Elon Musk
+is a &lt;a href=&#34;https://www.google.com/search?q=elon+musk+bad+presenter&#34;&gt;notoriously bad presenter&lt;/a&gt;. But his companies are pushing the
+boundaries on monstrously hard technical problems. The technology is so
+captivating that his presentations are riveting despite him.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;Sublime Text&lt;/a&gt; is a gorgeous editor. I don&#39;t think I&#39;ve seen &lt;em&gt;any&lt;/em&gt;
+text editor that looks and feels better. But it&#39;s also reliable, powerful, and
+stunningly fast. If it were uglier, it would still have customers. If it were
+unstable, I don&#39;t know anyone who would buy it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;What are the fundamentals of software engineering? What does the professional
+see that the amateur doesn&#39;t?&lt;/p&gt;
+&lt;p&gt;Here are some that come to mind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Make something people want.&lt;/strong&gt; The professional deeply engages with reality.
+  She finds opportunities by talking to real people and diving into the details
+  of real systems. She observes, iterates, and creates something valuable that
+  people love.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Solve the hard problem.&lt;/strong&gt; The professional solves the hard problems that
+  others avoid. She has the domain knowledge to know what the hard problems
+  &lt;em&gt;are&lt;/em&gt; and the technical expertise to know what she can do about them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Stay disciplined.&lt;/strong&gt; The professional tames the waves of frustration,
+  boredom, uncertainty, and self-doubt. She has the tenacity and focus to see
+  her work through.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Work as a team.&lt;/strong&gt; The professional knows she can&#39;t do everything alone. She
+  plays to her strengths, communicates clearly and openly, and works well with
+  others. She builds trust and a professional culture.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Move fast and learn fast.&lt;/strong&gt; The professional knows which parts of a project
+  are the most fraught and optimizes her workflow accordingly. She tests her
+  assumptions early and cheaply, and she avoids chasing dead ends. And if
+  something just won&#39;t work, she acknowledges it and moves on.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sounds great. But how do we translate these high-level ideas into something
+concrete and actionable? I have some hunches, but it&#39;ll take more than one blog
+post to work them out.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I only write when I am inspired. Fortunately I am inspired every day at nine
+o’clock.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; William Faulkner, &lt;a href=&#34;https://quoteinvestigator.com/2013/10/30/inspire-nine/&#34;&gt;maybe&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;p&gt;Jeff Dean and Sanjay Ghemawat are two of the most outstanding engineers at
+Google. Together, they&#39;ve produced breakthrough projects like MapReduce,
+Bigtable, and TensorFlow. Google pays them lavishly and they&#39;re worth every
+penny.&lt;/p&gt;
+&lt;p&gt;How are they so effective?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For those who work inside Google, it&#39;s well worth it to look at Jeff &amp;amp;
+Sanjay&#39;s commit history and code review dashboard. They aren&#39;t actually all
+that much more productive in terms of code written than a decent SWE3 who
+knows his codebase.&lt;/p&gt;
+&lt;p&gt;The reason they have a reputation as rockstars is that they can &lt;em&gt;apply&lt;/em&gt; this
+ productivity to things that really matter[.]&lt;/p&gt;
+&lt;p&gt;&amp;mdash; &lt;em&gt;nostrademons&lt;/em&gt; (&lt;a href=&#34;https://news.ycombinator.com/item?id=5496406&#34;&gt;via Hacker News&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;p&gt;Why is the professional attitude so rare? It&#39;s precisely &lt;em&gt;because&lt;/em&gt; the
+professional attitude is about fundamentals.&lt;/p&gt;
+&lt;p&gt;Fundamentals apply widely and deeply. They are so global that they must become
+habit. They are so simple that they border on cliché. Working on them can feel
+boring, effortful, and even embarrassing.&lt;/p&gt;
+&lt;p&gt;Hacks and tricks apply narrowly and shallowly. They are so local that we can
+use them and forget them. They are complex and novel, so they easily grab our
+attention. And knowing a neat trick can make us feel special and superior.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[W]hat changed me from an amateur into a professional was getting a really
+firm grip on the fundamentals.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Toshiro Kageyama 7-dan, &lt;em&gt;Lessons in the Fundamentals of Go&lt;/em&gt; (Japanese
+title: &lt;em&gt;Amateurs and Professionals&lt;/em&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Don&#39;t mistake me; I think tricks are great. &lt;a href=&#34;https://mathoverflow.net/questions/363119&#34;&gt;Even world-class
+mathematicians&lt;/a&gt; have favorites that they use constantly. But they are
+world-class precisely &lt;em&gt;because&lt;/em&gt; they have mastered their fundamentals.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;How can we cultivate a professional attitude? I don&#39;t know. But if it helps,
+here&#39;s a tendency I&#39;ve noticed in myself.&lt;/p&gt;
+&lt;p&gt;When I&#39;m solving a problem I care deeply about, even the drudge work is
+energizing. Then the professional spirit kicks in: I&#39;m greedy for &lt;em&gt;anything&lt;/em&gt;
+that will help me attain my goal.&lt;/p&gt;
+&lt;p&gt;When I&#39;m solving a problem I don&#39;t care about, even the novel parts are boring.
+Then the amateur spirit kicks in: a new language, a new framework, some &lt;em&gt;twist&lt;/em&gt;
+to keep myself engaged.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Comes a day you&#39;re gonna have to decide whether it&#39;s about &lt;em&gt;you&lt;/em&gt; or about the
+&lt;em&gt;work&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Cedric Daniels, &lt;a href=&#34;https://www.youtube.com/watch?v=FNEDJPeoHZo&#34;&gt;The Wire&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I hope you find something that inspires you to hold a professional attitude.
+Get the substance right and the rest takes care of itself.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-07:/log/a-fast-and-simple-gmail-workflow/</id>
+    <link href="https://arunkprasad.com/log/a-fast-and-simple-gmail-workflow/"/>
+    <title>A Fast and Simple Gmail Workflow</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-07T00:00:00-07:53</published>
+    <updated>2022-01-07T00:00:00-07:53</updated>
+    <summary>How I learned to stop worrying and tame my inbox</summary>
+    <content type="html">&lt;p&gt;I created my main Gmail account in September 2004, and since then I&#39;ve made
+almost 55,000 threads. That&#39;s about ten threads a day for 17 years. At times
+I&#39;ve managed to keep that under control. But email becomes secondary in the
+high tides of life, and ten threads a day soon becomes a storm of hundreds.&lt;/p&gt;
+&lt;p&gt;Sometimes I&#39;ve declared &lt;a href=&#34;https://en.wikipedia.org/wiki/Email_bankruptcy&#34;&gt;email bankruptcy&lt;/a&gt;, but it feels like a
+failure each time I do so. What opportunities have I missed because I didn&#39;t
+follow up in time? And how can I expect others to reply to me if I don&#39;t do the
+same for them?&lt;/p&gt;
+&lt;p&gt;So I&#39;ve started using a simple workflow to manage my inbox, no matter how large
+it might get:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Start with the oldest email I have.&lt;/li&gt;
+&lt;li&gt;If I can handle it quickly, do so. Otherwise, deal with it later.&lt;/li&gt;
+&lt;li&gt;Move to the next one.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It&#39;s simple, but the trick is in the details. With the right shortcuts and the
+right labels, I can handle hundreds of emails in one go. Email backlogs are no
+longer intimidating, and I can keep my inboxes clear.&lt;/p&gt;
+&lt;h1&gt;The setup&lt;/h1&gt;
+&lt;p&gt;I use the default Gmail view and the default sort order. So my inbox is a
+simple list with the newest emails first.&lt;/p&gt;
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;Update &amp;mdash; I switched to a Multiple Inbox view and added a second view.
+This view includes only emails marked with my &lt;code&gt;!&lt;/code&gt; label, which I use for
+important emails.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The critical extension is &lt;em&gt;Keyboard shortcuts&lt;/em&gt; under &lt;em&gt;Settings &amp;gt; General&lt;/em&gt;. You
+can type &lt;code&gt;?&lt;/code&gt; at any time to see all of the available shortcuts, but four are
+enough for this workflow to work:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;}&lt;/code&gt; &amp;mdash; archive and move to the next newest&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;r&lt;/code&gt; &amp;mdash; reply&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt; &amp;mdash; add a label&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌘+Enter&lt;/code&gt; &amp;mdash; send&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;The core workflow&lt;/h1&gt;
+&lt;p&gt;First I open the oldest email I have. If my inbox is truly massive, I &lt;a href=&#34;https://gsuitetips.com/tips/gmail/sort-email-by-oldest-first/&#34;&gt;sort by
+oldest first&lt;/a&gt; so I don&#39;t have to go looking for it.&lt;/p&gt;
+&lt;p&gt;The email is open with no distractions to pull me away. Then I decide what kind
+of email I&#39;m looking at:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Irrelevant&lt;/strong&gt; &amp;mdash; Spam, irrelevant mailing lists, and emails that just aren&#39;t
+  worth the time. For most mailing lists, Gmail has an &lt;em&gt;Unsubscribe&lt;/em&gt; link next
+  to the sender&#39;s email address. Otherwise, hit &lt;code&gt;}&lt;/code&gt; to move on.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No reply&lt;/strong&gt; &amp;mdash; For announcements or emails that are outdated. Hit &lt;code&gt;}&lt;/code&gt; to
+  move on.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fast reply&lt;/strong&gt; &amp;mdash; For emails I can write within a minute or so. &lt;code&gt;r&lt;/code&gt; to reply
+  and &lt;code&gt;⌘+Enter&lt;/code&gt; to send. Then hit &lt;code&gt;}&lt;/code&gt; to move on.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Slow reply&lt;/strong&gt; &amp;mdash; If I need more time to reply, I add a special label to the
+  email so I can find and follow up on it later. I type &lt;code&gt;l&lt;/code&gt; to pull up the
+  label menu, enter my label name, hit &lt;code&gt;Enter&lt;/code&gt;, then hit &lt;code&gt;}&lt;/code&gt; to move on.&lt;/p&gt;
+&lt;p&gt;I use a short label name like &lt;code&gt;!&lt;/code&gt; since it&#39;s faster to type. So the full
+sequence is something like &lt;code&gt;l!&amp;lt;enter&amp;gt;}&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The main friction here is clicking the &lt;em&gt;Unsubscribe&lt;/em&gt; link. Otherwise, I can get
+through the first three types here in seconds.&lt;/p&gt;
+&lt;h1&gt;Extending the workflow&lt;/h1&gt;
+&lt;p&gt;If this basic workflow works for you, here are some simple ways to extend it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Undo&lt;/strong&gt; &amp;mdash; Use &lt;code&gt;z&lt;/code&gt; to undo an action. For example, maybe you didn&#39;t mean to
+  archive the email you were looking at.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spam and trash&lt;/strong&gt; &amp;mdash; Use &lt;code&gt;!&lt;/code&gt; to mark emails as spam and &lt;code&gt;#&lt;/code&gt; to send emails
+  to the trash. Unfortunately this returns you to the main inbox, so I don&#39;t
+  really like using it. So I usually just hit &lt;code&gt;}&lt;/code&gt; to archive everything.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And if I decide this workflow needs changing, I&#39;ll post an update.&lt;/p&gt;
+&lt;div class=&#34;admonition thanks&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Thanks&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href=&#34;http://nlalterman.com&#34;&gt;Naomi Alterman&lt;/a&gt; for her suggestions and
+Kai Wong for the discussion.&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-06:/log/how-to-make-a-website-work-on-mobile/</id>
+    <link href="https://arunkprasad.com/log/how-to-make-a-website-work-on-mobile/"/>
+    <title>How to Make a Website Work on Mobile</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-06T00:00:00-07:53</published>
+    <updated>2022-01-06T00:00:00-07:53</updated>
+    <summary>The specific HTML and CSS you need to make sites mobile-friendly, and the tools to test your site across multiple devices.</summary>
+    <content type="html">&lt;p&gt;Ask Google &lt;a href=&#34;https://www.google.com/search?q=how+to+make+a+website+work+on+mobile&#34;&gt;how to make a website work on mobile&lt;/a&gt; and you can&#39;t help but
+weep at the results. &#34;Use frameworks&#34; and &#34;avoid pop-ups&#34; is fine advice, but
+it&#39;s hardly useful to a technical user in the trenches.&lt;/p&gt;
+&lt;p&gt;In this post I&#39;ll describe the specific things I do to make websites
+mobile-friendly, including some of the gotchas I&#39;ve hit in the past.&lt;/p&gt;
+&lt;h1&gt;The essential setup&lt;/h1&gt;
+&lt;p&gt;Stick this in your page &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;meta&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;viewport&amp;quot;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;width=device-width, initial-scale=1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;And add this to your CSS:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;4&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kp&#34;&gt;-webkit-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;text-size-adjust&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;text-size-adjust&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag&#34;&gt;viewport meta tag&lt;/a&gt; is vital:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When it&#39;s missing, the browser will render in desktop mode, and all of your
+  responsive CSS rules will be ignored.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When it&#39;s present, the browser will properly resize your website to the
+  device, and all of your responsive CSS rules can take effect.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust&#34;&gt;&lt;code&gt;text-size-adjust&lt;/code&gt;&lt;/a&gt; controls the browser&#39;s text rendering behavior:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;By default, the browser might apply a text resizing algorithm to make the
+  page readable on mobile. But if you&#39;re using your own responsive CSS, this
+  algorithm is unpredictable and can create weird bugs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;By setting this to &lt;code&gt;100%&lt;/code&gt;, the browser renders text predictably, which means
+  that your text will always look as you expect it to.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Older versions of Safari support only &lt;code&gt;-webkit-text-size-adjust&lt;/code&gt;, so we should
+include both.&lt;/p&gt;
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;This &lt;a href=&#34;https://stackoverflow.com/a/3428477&#34;&gt;Stack Overflow answer&lt;/a&gt; has some useful discussion on
+&lt;code&gt;text-size-adjust&lt;/code&gt; and how to use it safely.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1&gt;Responsive CSS&lt;/h1&gt;
+&lt;p&gt;The basic structure of this is simple:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;4&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;5&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;6&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;p&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;media&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;screen&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;min-width&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;640px&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;/* Your CSS */&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;p&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;media&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;screen&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;min-width&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1280px&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;/* Your CSS */&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;For the specific screen sizes, I just refer to a framework like
+&lt;a href=&#34;https://tailwindcss.com/docs/responsive-design&#34;&gt;Tailwind&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Debugging&lt;/h1&gt;
+&lt;p&gt;I&#39;m less familiar with Safari, but &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode&#34;&gt;Firefox&lt;/a&gt; and &lt;a href=&#34;https://developer.chrome.com/docs/devtools/device-mode/&#34;&gt;Chrome&lt;/a&gt;
+both have excellent developer consoles that let you emulate specific device
+sizes.&lt;/p&gt;
+&lt;p&gt;For more thorough testing, I love Browserstack&#39;s &lt;a href=&#34;https://www.browserstack.com/responsive&#34;&gt;Responsive Design
+Testing&lt;/a&gt; tool, which shows you how your site renders on about a dozen
+different devices. I&#39;ve only ever used the free tier.&lt;/p&gt;
+&lt;h1&gt;If you really need a framework&lt;/h1&gt;
+&lt;p&gt;In yet another win for &lt;a href=&#34;https://en.wikipedia.org/wiki/Composition_over_inheritance&#34;&gt;composition over inheritance&lt;/a&gt;, the last few years
+have seen the rise of compositional CSS frameworks like &lt;a href=&#34;http://tachyons.io/&#34;&gt;Tachyons&lt;/a&gt;
+and &lt;a href=&#34;https://tailwindcss.com/&#34;&gt;Tailwind&lt;/a&gt;. Adam Wathan (one of the Tailwind devs)
+&lt;a href=&#34;https://adamwathan.me/css-utility-classes-and-separation-of-concerns/&#34;&gt;explains&lt;/a&gt; the philosophy of this approach better than I could.&lt;/p&gt;
+&lt;p&gt;I don&#39;t know where the industry will move a few years from now, but for now, I
+love both of these frameworks and highly recommend them.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    
+    <id>tag:arunkprasad.com,2022-01-05:/log/how-to-create-a-static-website-with-flask/</id>
+    <link href="https://arunkprasad.com/log/how-to-create-a-static-website-with-flask/"/>
+    <title>How to Create a Static Website with Flask</title>
+    <author>
+      <name>Arun Prasad</name>
+    </author>
+    <published>2022-01-05T00:00:00-07:53</published>
+    <updated>2022-01-05T00:00:00-07:53</updated>
+    <summary>Static sites are fast and simple. Learn how to create one with Flask and Flask-Frozen.</summary>
+    <content type="html">&lt;p&gt;Static sites are dead simple: simple to make, simple to deploy, and simple to
+serve. And &lt;em&gt;because&lt;/em&gt; they&#39;re so simple, there are naturally &lt;a href=&#34;https://jamstack.org/generators/&#34;&gt;hundreds&lt;/a&gt; of
+ways to manage them.&lt;/p&gt;
+&lt;p&gt;Even so, we have excellent and time-tested web frameworks that we can repurpose
+as static site generators with minimal effort. I made this website with Flask,
+and in this post I&#39;ll show you how.&lt;/p&gt;
+&lt;p&gt;(You can see this site&#39;s source code &lt;a href=&#34;https://github.com/akprasad/arunkprasad.com&#34;&gt;on GitHub&lt;/a&gt;.)&lt;/p&gt;
+&lt;h1&gt;The application skeleton&lt;/h1&gt;
+&lt;p&gt;If you&#39;re familiar with Flask already, you can skip this section. If not &amp;mdash;
+behold! Flask is delightfully lightweight:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt; 1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 5&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 8&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 9&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;11&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;12&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;13&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;14&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;15&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;16&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;17&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;18&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;19&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;20&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;21&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;22&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;23&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;24&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;25&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;26&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;27&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;28&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;29&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;30&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;31&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Flask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;render_template&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask_assets&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Bundle&lt;/span&gt;
+
+
+&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Flask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;vm&#34;&gt;__name__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# I use Flask-Assets to build and combine CSS and JS assets,&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# but this isn&amp;#39;t strictly necessary.&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;assets&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;css&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Bundle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;css/style.css&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;css/pygments.css&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;output&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;gen/style.css&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;assets&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;site_css&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;css&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;parse_post&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;slug&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+
+
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;load_all_posts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+
+
+&lt;span class=&#34;nd&#34;&gt;@app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;posts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;load_all_posts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;render_template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;index.html&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;posts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&#34;nd&#34;&gt;@app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;/log/&amp;lt;slug&amp;gt;/&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;slug&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;post&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;parse_post&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;slug&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;render_template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;blog-post.html&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;post&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;post&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;render_template&lt;/code&gt; uses &lt;a href=&#34;https://jinja.palletsprojects.com/en/3.0.x/&#34;&gt;Jinja&lt;/a&gt; templates by default. Both of my
+templates above inherit from &lt;code&gt;base.html&lt;/code&gt;, which defines my boilerplate:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt; 1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 5&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 8&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt; 9&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;11&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;12&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;13&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;14&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;15&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;16&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;x&#34;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;  &amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;    &amp;lt;title&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{%&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;block&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;%}{%&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;endblock&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;%}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{%&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;assets&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;site_css&amp;quot;&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;%}&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{{&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ASSET_URL&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;}}&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{%&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;endassets&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;%}&lt;/span&gt;
+
+&lt;span class=&#34;x&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;{# Needed for sane display on mobile. #}&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;  &amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;  &amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{%&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;block&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;body&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;%}&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;{%&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;endblock&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;%}&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;  &amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;x&#34;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;Since the end result is a static website, dynamic Flask features like session
+management and form submissions naturally won&#39;t work. This isn&#39;t an issue as
+long as you stick to the basics: routes, templates, and no stateful logic.&lt;/p&gt;
+&lt;h1&gt;Writing posts with Markdown and Pygments&lt;/h1&gt;
+&lt;p&gt;I write posts in Markdown with some extra metadata:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;4&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;title: My post title
+date: 2022-01-05
+
+This is my **post**.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;Then I process these posts with &lt;code&gt;python-markdown&lt;/code&gt;, with two extensions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;meta&lt;/code&gt; for post metadata (the &lt;code&gt;title&lt;/code&gt; and &lt;code&gt;date&lt;/code&gt; fields above)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;codehilite&lt;/code&gt; for code syntax highlighting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both of these extensions are provided with the default &lt;code&gt;markdown&lt;/code&gt; package.
+Here&#39;s the basic setup:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;4&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;5&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;6&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;7&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;8&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;markdown&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;md&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;markdown&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Markdown&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extensions&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;meta&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;codehilite&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# OK, the API here is a little wonky.&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Hat tip to: https://stackoverflow.com/questions/66438307&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;content&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;md&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;convert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;md&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Meta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;md&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Meta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;date&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;codehilite&lt;/code&gt; uses Pygments under the hood. You can generate Pygments CSS from
+the command line:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;4&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;c1&#34;&gt;# https://python-markdown.github.io/extensions/code_hilite/&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# https://pygments.org/docs/cmdline/&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# https://pygments.org/styles/&lt;/span&gt;
+pygmentize&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-S&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;solarized-light&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-f&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;html&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-a&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;.codehilite&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;style.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;The default CSS works well enough, but I had some issues with its whitespacing
+around line numbers and made some small changes to the defaults.&lt;/p&gt;
+&lt;h1&gt;Deploying with Frozen-Flask&lt;/h1&gt;
+&lt;p&gt;Frozen-Flask can generally discover app URLs on its own. For most of my use
+cases, it works out of the box with no extra config:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;4&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;5&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;6&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask_frozen&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Freezer&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;debug&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;False&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;freezer&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Freezer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# By default, `freezer` writes to the `build` directory&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;freezer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;freeze&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;Then deployment is as simple as running the script above and syncing the output
+to prod:&lt;/p&gt;
+&lt;div class=&#34;codehilite&#34;&gt;&lt;table class=&#34;codehilitetable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt;&lt;span class=&#34;normal&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;normal&#34;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./freeze.py
+rsync&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-r&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;build&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&amp;lt;server_destination&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;h1&gt;Scaling this setup&lt;/h1&gt;
+&lt;p&gt;I&#39;ve scaled this setup by caching rendered text content and re-rendering only
+when the source file changes. While I haven&#39;t used this approach for a truly
+massive setup with millions of static files, it has been totally sufficient for
+my needs.&lt;/p&gt;
+&lt;p&gt;Overall, I love using Flask to create static websites. I can use a mature
+framework that I love, lean on its rich ecosystem of plugins, and easily move
+to a dynamic application if necessary.&lt;/p&gt;</content>
+  </entry>
+  
+</feed>

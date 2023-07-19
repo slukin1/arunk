@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>How to Create a Static Website with Flask | Arun Prasad</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/static/gen/style.css?c8c7d04d">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer data-domain="arunkprasad.com" src="https://plausible.io/js/plausible.js"></script>
+    <meta name="description" content="Static sites are fast and simple. Learn how to create one with Flask and Flask-Frozen.">
+  </head>
+  <body><div class="wrapper">
+<nav>
+    <a href="/about/">About</a> |
+    <a href="/">Log</a> |
+    <a href="/pages/">Pages</a> |
+    <a href="/pages/subscribe/">Subscribe</a> |
+    <a href="/atom.xml">Feed</a>
+</nav>
+
+<article>
+<header>
+    <h1 class="mb0">How to Create a Static Website with Flask</h1>
+    <p class="gray f7 normal db mt0">2022-01-05</p>
+</header>
+<p>Static sites are dead simple: simple to make, simple to deploy, and simple to
+serve. And <em>because</em> they're so simple, there are naturally <a href="https://jamstack.org/generators/">hundreds</a> of
+ways to manage them.</p>
+<p>Even so, we have excellent and time-tested web frameworks that we can repurpose
+as static site generators with minimal effort. I made this website with Flask,
+and in this post I'll show you how.</p>
+<p>(You can see this site's source code <a href="https://github.com/akprasad/arunkprasad.com">on GitHub</a>.)</p>
+<h1>The application skeleton</h1>
+<p>If you're familiar with Flask already, you can skip this section. If not &mdash;
+behold! Flask is delightfully lightweight:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+<span class="kn">from</span> <span class="nn">flask_assets</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">Bundle</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># I use Flask-Assets to build and combine CSS and JS assets,</span>
+<span class="c1"># but this isn&#39;t strictly necessary.</span>
+<span class="n">assets</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">css</span> <span class="o">=</span> <span class="n">Bundle</span><span class="p">(</span><span class="s2">&quot;css/style.css&quot;</span><span class="p">,</span> <span class="s2">&quot;css/pygments.css&quot;</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">&quot;gen/style.css&quot;</span><span class="p">)</span>
+<span class="n">assets</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;site_css&quot;</span><span class="p">,</span> <span class="n">css</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">parse_post</span><span class="p">(</span><span class="n">slug</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="o">...</span>
+
+
+<span class="k">def</span> <span class="nf">load_all_posts</span><span class="p">():</span>
+    <span class="o">...</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="n">posts</span> <span class="o">=</span> <span class="n">load_all_posts</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span> <span class="n">posts</span><span class="o">=</span><span class="n">posts</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/log/&lt;slug&gt;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">slug</span><span class="p">):</span>
+    <span class="n">post</span> <span class="o">=</span> <span class="n">parse_post</span><span class="p">(</span><span class="n">slug</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;blog-post.html&quot;</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="n">post</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+
+<p><code>render_template</code> uses <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja</a> templates by default. Both of my
+templates above inherit from <code>base.html</code>, which defines my boilerplate:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">&lt;!doctype html&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">  &lt;head&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">title</span> <span class="cp">%}{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x">&lt;/title&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">assets</span> <span class="s2">&quot;site_css&quot;</span> <span class="cp">%}</span>
+<span class="x">    &lt;link rel=&quot;stylesheet&quot; rel=&quot;stylesheet&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">ASSET_URL</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endassets</span> <span class="cp">%}</span>
+
+<span class="x">    </span><span class="c">{# Needed for sane display on mobile. #}</span>
+<span class="x">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span>
+<span class="x">  &lt;/head&gt;</span>
+<span class="x">  &lt;body&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">body</span> <span class="cp">%}</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+<span class="x">  &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div></td></tr></table></div>
+
+<p>Since the end result is a static website, dynamic Flask features like session
+management and form submissions naturally won't work. This isn't an issue as
+long as you stick to the basics: routes, templates, and no stateful logic.</p>
+<h1>Writing posts with Markdown and Pygments</h1>
+<p>I write posts in Markdown with some extra metadata:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>title: My post title
+date: 2022-01-05
+
+This is my **post**.
+</code></pre></div></td></tr></table></div>
+
+<p>Then I process these posts with <code>python-markdown</code>, with two extensions:</p>
+<ul>
+<li><code>meta</code> for post metadata (the <code>title</code> and <code>date</code> fields above)</li>
+<li><code>codehilite</code> for code syntax highlighting.</li>
+</ul>
+<p>Both of these extensions are provided with the default <code>markdown</code> package.
+Here's the basic setup:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">markdown</span>
+<span class="n">md</span> <span class="o">=</span> <span class="n">markdown</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;meta&quot;</span><span class="p">,</span> <span class="s2">&quot;codehilite&quot;</span><span class="p">])</span>
+
+<span class="c1"># OK, the API here is a little wonky.</span>
+<span class="c1"># Hat tip to: https://stackoverflow.com/questions/66438307</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">Meta</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">Meta</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+
+<p><code>codehilite</code> uses Pygments under the hood. You can generate Pygments CSS from
+the command line:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># https://python-markdown.github.io/extensions/code_hilite/</span>
+<span class="c1"># https://pygments.org/docs/cmdline/</span>
+<span class="c1"># https://pygments.org/styles/</span>
+pygmentize<span class="w"> </span>-S<span class="w"> </span>solarized-light<span class="w"> </span>-f<span class="w"> </span>html<span class="w"> </span>-a<span class="w"> </span>.codehilite<span class="w"> </span>&gt;&gt;<span class="w"> </span>style.css
+</code></pre></div></td></tr></table></div>
+
+<p>The default CSS works well enough, but I had some issues with its whitespacing
+around line numbers and made some small changes to the defaults.</p>
+<h1>Deploying with Frozen-Flask</h1>
+<p>Frozen-Flask can generally discover app URLs on its own. For most of my use
+cases, it works out of the box with no extra config:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">flask_frozen</span> <span class="kn">import</span> <span class="n">Freezer</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">freezer</span> <span class="o">=</span> <span class="n">Freezer</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># By default, `freezer` writes to the `build` directory</span>
+<span class="n">freezer</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+
+<p>Then deployment is as simple as running the script above and syncing the output
+to prod:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>./freeze.py
+rsync<span class="w"> </span>-r<span class="w"> </span>build<span class="w"> </span>&lt;server_destination&gt;
+</code></pre></div></td></tr></table></div>
+
+<h1>Scaling this setup</h1>
+<p>I've scaled this setup by caching rendered text content and re-rendering only
+when the source file changes. While I haven't used this approach for a truly
+massive setup with millions of static files, it has been totally sufficient for
+my needs.</p>
+<p>Overall, I love using Flask to create static websites. I can use a mature
+framework that I love, lean on its rich ecosystem of plugins, and easily move
+to a dynamic application if necessary.</p>
+</article>
+</div>
+
+<nav class="df prev-next">
+    
+    <a href="/log/how-to-make-a-website-work-on-mobile/">&larr; How to Make a Website Work on Mobile</a>
+    
+    
+</nav></body>
+</html>

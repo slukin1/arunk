@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>How to Make a Website Work on Mobile | Arun Prasad</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/static/gen/style.css?c8c7d04d">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer data-domain="arunkprasad.com" src="https://plausible.io/js/plausible.js"></script>
+    <meta name="description" content="The specific HTML and CSS you need to make sites mobile-friendly, and the tools to test your site across multiple devices.">
+  </head>
+  <body><div class="wrapper">
+<nav>
+    <a href="/about/">About</a> |
+    <a href="/">Log</a> |
+    <a href="/pages/">Pages</a> |
+    <a href="/pages/subscribe/">Subscribe</a> |
+    <a href="/atom.xml">Feed</a>
+</nav>
+
+<article>
+<header>
+    <h1 class="mb0">How to Make a Website Work on Mobile</h1>
+    <p class="gray f7 normal db mt0">2022-01-06</p>
+</header>
+<p>Ask Google <a href="https://www.google.com/search?q=how+to+make+a+website+work+on+mobile">how to make a website work on mobile</a> and you can't help but
+weep at the results. "Use frameworks" and "avoid pop-ups" is fine advice, but
+it's hardly useful to a technical user in the trenches.</p>
+<p>In this post I'll describe the specific things I do to make websites
+mobile-friendly, including some of the gotchas I've hit in the past.</p>
+<h1>The essential setup</h1>
+<p>Stick this in your page <code>&lt;head&gt;</code>:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+
+<p>And add this to your CSS:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">html</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kp">-webkit-</span><span class="n">text-size-adjust</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">  </span><span class="n">text-size-adjust</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">viewport meta tag</a> is vital:</p>
+<ul>
+<li>
+<p>When it's missing, the browser will render in desktop mode, and all of your
+  responsive CSS rules will be ignored.</p>
+</li>
+<li>
+<p>When it's present, the browser will properly resize your website to the
+  device, and all of your responsive CSS rules can take effect.</p>
+</li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust"><code>text-size-adjust</code></a> controls the browser's text rendering behavior:</p>
+<ul>
+<li>
+<p>By default, the browser might apply a text resizing algorithm to make the
+  page readable on mobile. But if you're using your own responsive CSS, this
+  algorithm is unpredictable and can create weird bugs.</p>
+</li>
+<li>
+<p>By setting this to <code>100%</code>, the browser renders text predictably, which means
+  that your text will always look as you expect it to.</p>
+</li>
+</ul>
+<p>Older versions of Safari support only <code>-webkit-text-size-adjust</code>, so we should
+include both.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This <a href="https://stackoverflow.com/a/3428477">Stack Overflow answer</a> has some useful discussion on
+<code>text-size-adjust</code> and how to use it safely.</p>
+</div>
+<h1>Responsive CSS</h1>
+<p>The basic structure of this is simple:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">640px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c">/* Your CSS */</span>
+<span class="p">}</span>
+
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">1280px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c">/* Your CSS */</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+
+<p>For the specific screen sizes, I just refer to a framework like
+<a href="https://tailwindcss.com/docs/responsive-design">Tailwind</a>.</p>
+<h1>Debugging</h1>
+<p>I'm less familiar with Safari, but <a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode">Firefox</a> and <a href="https://developer.chrome.com/docs/devtools/device-mode/">Chrome</a>
+both have excellent developer consoles that let you emulate specific device
+sizes.</p>
+<p>For more thorough testing, I love Browserstack's <a href="https://www.browserstack.com/responsive">Responsive Design
+Testing</a> tool, which shows you how your site renders on about a dozen
+different devices. I've only ever used the free tier.</p>
+<h1>If you really need a framework</h1>
+<p>In yet another win for <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">composition over inheritance</a>, the last few years
+have seen the rise of compositional CSS frameworks like <a href="http://tachyons.io/">Tachyons</a>
+and <a href="https://tailwindcss.com/">Tailwind</a>. Adam Wathan (one of the Tailwind devs)
+<a href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/">explains</a> the philosophy of this approach better than I could.</p>
+<p>I don't know where the industry will move a few years from now, but for now, I
+love both of these frameworks and highly recommend them.</p>
+</article>
+</div>
+
+<nav class="df prev-next">
+    
+    <a href="/log/a-fast-and-simple-gmail-workflow/">&larr; A Fast and Simple Gmail Workflow</a>
+    
+    
+    <a href="/log/how-to-create-a-static-website-with-flask/">How to Create a Static Website with Flask &rarr;</a>
+    
+</nav></body>
+</html>
